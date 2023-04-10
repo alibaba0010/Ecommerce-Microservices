@@ -1,15 +1,15 @@
 import * as dotenv from "dotenv";
 
-if (process.env.NODE_ENV !== "production") {
+if (process.env.NODE_ENV === "production") {
   const configFile = `./.env.${process.env.NODE_ENV}`;
-  dotEnv.config({ path: configFile });
+  dotenv.config({ path: configFile });
 } else {
-  dotenv.config({ path: "./customers/.env" });
+  dotenv.config({ path: "./shopping/.env" });
 }
 
 export default {
   PORT: process.env.PORT,
-  DB_URL: process.env.MONGODB_URI,
+  MONGO_URL: process.env.MONGO_URL,
   APP_SECRET: process.env.APP_SECRET,
   EXCHANGE_NAME: process.env.EXCHANGE_NAME,
   MSG_QUEUE_URL: process.env.MSG_QUEUE_URL,

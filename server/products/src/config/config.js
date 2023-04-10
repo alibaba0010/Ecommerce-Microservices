@@ -4,7 +4,7 @@ if (process.env.NODE_ENV === "production") {
   const configFile = `./.env.${process.env.NODE_ENV}`;
   dotenv.config({ path: configFile });
 } else {
-  dotenv.config({ path: "./customers/.env" });
+  dotenv.config({ path: "./products/.env" });
 }
 export default {
   PORT: process.env.PORT,
